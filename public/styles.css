@@ -1,0 +1,153 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1DA1F2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.navbar .logout-btn {
+    background: #fff;
+    color: #1DA1F2;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.navbar .logout-btn:hover {
+    background: #e8f5fe;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Post Box */
+.post-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post-box h2 {
+    margin-bottom: 10px;
+}
+
+.post-box textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.post-box button {
+    background-color: #1DA1F2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.post-box button:hover {
+    background-color: #0d8dd6;
+}
+
+/* Feed */
+.feed {
+    margin-top: 20px;
+}
+
+.feed h2 {
+    margin-bottom: 20px;
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-card .post-content {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.like-btn {
+    background: #e1e8ed;
+    color: #333;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.like-btn:hover {
+    background: #d3dae1;
+}
+
+/* No Posts */
+.no-posts {
+    text-align: center;
+    color: #777;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .post-box textarea {
+        height: 80px;
+    }
+
+    .post-card {
+        padding: 10px;
+    }
+}

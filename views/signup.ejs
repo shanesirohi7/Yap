@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+    <title>Signup - Yap</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 flex flex-col justify-center items-center min-h-screen">
+    <header class="text-center mb-6">
+        <h1 class="text-3xl font-bold text-blue-600">Create Your Account</h1>
+        <p class="mt-1 text-gray-600">All Your Account Details Are Encrypted and Nobody Can See Them</p>
+    </header>
+
+    <main class="flex flex-col items-center mb-6">
+        <form action="/signup" method='post' class="bg-white p-6 rounded-lg shadow-md w-80">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 text-sm font-semibold mb-1">Name</label>
+                <input name="name" type="text" id="name" placeholder="Enter your name" class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-semibold mb-1">Email</label>
+                <input name="email" type="email" id="email" placeholder="Enter your email" class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 text-sm font-semibold mb-1">Password</label>
+                <input name="password" type="password" id="password" placeholder="Create a password" class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>
+
+            <button type="submit" class="bg-blue-600 text-white py-2 rounded-lg w-full hover:bg-blue-700 transition duration-300">
+                Sign Up
+            </button>
+        </form>
+    </main>
+
+    <footer class="mt-6 text-center">
+        <p class="text-gray-400 text-xs">&copy; 2024 Yap. By Shane aka Sushen.</p>
+    </footer>   
+</body>
+</html>

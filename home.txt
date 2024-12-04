@@ -1,0 +1,36 @@
+<div class="navbar">
+    <h1>Opinion Platform</h1>
+    <div>
+        <p>Welcome, <%= user.name %>!</p>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-box">
+        <h2>What's on your mind?</h2>
+        <form method="POST" action="/post">
+            <textarea name="content" placeholder="Type something..." required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="feed">
+        <h2>Opinions Feed</h2>
+        <% if (posts.length === 0) { %>
+            <p class="no-posts">No opinions yet. Be the first to share!</p>
+        <% } %>
+        <% posts.forEach(post => { %>
+            <div class="post-card">
+                <p class="post-content"><%= post.content %></p>
+                <form method="POST" action="/like/<%= post._id %>">
+                    <button type="submit" class="like-btn">
+                        👍 Like (<%= post.likes %>)
+                    </button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+</div>
