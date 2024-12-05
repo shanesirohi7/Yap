@@ -47,7 +47,22 @@ function redirectIfLoggedIn(req, res, next) {
 }
 
 // Routes
-app.get('/', redirectIfLoggedIn, (req, res) => res.render('index', { user: req.session.user }));
+app.get('/', async (req, res) => {
+    if (req.session.user) return res.redirect('/home');
+
+    // Fetch a few posts for the demo section
+    const demoPosts = await Post.find().sort({ createdAt: -1 }).limit(5);
+
+    const currentTime = Date.now();
+    const demoPostsWithTime = demoPosts.map(post => {
+        const timeDiff = currentTime - post.createdAt.getTime();
+        const hoursAgo = Math.floor(timeDiff / (1000 * 60 * 60));
+        const timeAgo = hoursAgo > 0 ? `${hoursAgo} hour${hoursAgo > 1 ? 's' : ''} ago` : 'Just now';
+        return { ...post.toObject(), timeAgo };
+    });
+
+    res.render('index', { demoPosts: demoPostsWithTime });
+});
 
 app.get('/signup', redirectIfLoggedIn, (req, res) => res.render('signup'));
 app.post('/signup', redirectIfLoggedIn, async (req, res) => {
